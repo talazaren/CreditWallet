@@ -12,6 +12,8 @@
 		1A5CBF982C4CDC5C0073BA02 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBF972C4CDC5C0073BA02 /* Item.swift */; };
 		1A5CBF9A2C4CDC5D0073BA02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CBF992C4CDC5D0073BA02 /* Assets.xcassets */; };
 		1A5CBF9D2C4CDC5D0073BA02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CBF9C2C4CDC5D0073BA02 /* Preview Assets.xcassets */; };
+		1A5CBFA72C4CDD840073BA02 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFA62C4CDD840073BA02 /* Person.swift */; };
+		1A5CBFA92C4CDD8F0073BA02 /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFA82C4CDD8F0073BA02 /* Credit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		1A5CBF972C4CDC5C0073BA02 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		1A5CBF992C4CDC5D0073BA02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A5CBF9C2C4CDC5D0073BA02 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1A5CBFA62C4CDD840073BA02 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		1A5CBFA82C4CDD8F0073BA02 /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +58,9 @@
 			isa = PBXGroup;
 			children = (
 				1A5CBF932C4CDC5C0073BA02 /* CreditWalletApp.swift */,
-				1A5CBF952C4CDC5C0073BA02 /* ContentView.swift */,
+				1A5CBFA52C4CDD5A0073BA02 /* Models */,
+				1A5CBFA42C4CDD1B0073BA02 /* MockData */,
+				1A5CBFA32C4CDCA30073BA02 /* Views */,
 				1A5CBF972C4CDC5C0073BA02 /* Item.swift */,
 				1A5CBF992C4CDC5D0073BA02 /* Assets.xcassets */,
 				1A5CBF9B2C4CDC5D0073BA02 /* Preview Content */,
@@ -68,6 +74,30 @@
 				1A5CBF9C2C4CDC5D0073BA02 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1A5CBFA32C4CDCA30073BA02 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A5CBF952C4CDC5C0073BA02 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A5CBFA42C4CDD1B0073BA02 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		1A5CBFA52C4CDD5A0073BA02 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A5CBFA62C4CDD840073BA02 /* Person.swift */,
+				1A5CBFA82C4CDD8F0073BA02 /* Credit.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +172,9 @@
 			files = (
 				1A5CBF962C4CDC5C0073BA02 /* ContentView.swift in Sources */,
 				1A5CBF982C4CDC5C0073BA02 /* Item.swift in Sources */,
+				1A5CBFA72C4CDD840073BA02 /* Person.swift in Sources */,
 				1A5CBF942C4CDC5C0073BA02 /* CreditWalletApp.swift in Sources */,
+				1A5CBFA92C4CDD8F0073BA02 /* Credit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
