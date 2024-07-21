@@ -6,17 +6,15 @@
 //
 
 import Foundation
+import SwiftData
 
 protocol Subscriber : AnyObject {
     func update(subject : Person )
 }
 
-struct WeakSubscriber {
-    weak var value : Subscriber?
-}
-
+@Model
 struct Person {
-    private lazy var subscribers : [WeakSubscriber] = []
+    private var subscribers : [WeakSubscriber] = []
     
     let name: String
     let surname: String
@@ -25,6 +23,14 @@ struct Person {
     
     var fullName: String {
         "\(name) \(surname)"
+    }
+    
+    init(subscribers: [WeakSubscriber], name: String, surname: String, password: String, credits: [Credit]) {
+        self.subscribers = subscribers
+        self.name = name
+        self.surname = surname
+        self.password = password
+        self.credits = credits
     }
     
     mutating func subscribe(_ subscriber: Subscriber) {
@@ -41,4 +47,8 @@ struct Person {
         subscribers.forEach { $0.value?.update(subject: self)
         }
     }
+}
+
+struct WeakSubscriber {
+    weak var value : Subscriber?
 }
