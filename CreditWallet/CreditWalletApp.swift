@@ -12,9 +12,7 @@ import SwiftData
 struct CreditWalletApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
-            Person.self,
-            Credit.self
+            Item.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
 

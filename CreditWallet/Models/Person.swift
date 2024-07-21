@@ -6,31 +6,22 @@
 //
 
 import Foundation
-import SwiftData
 
 protocol Subscriber : AnyObject {
     func update(subject : Person )
 }
 
-@Model
 struct Person {
-    private var subscribers : [WeakSubscriber] = []
+    private lazy var subscribers : [WeakSubscriber] = []
     
     let name: String
     let surname: String
     let password: String
+    let avatar: String
     var credits: [Credit]
     
     var fullName: String {
         "\(name) \(surname)"
-    }
-    
-    init(subscribers: [WeakSubscriber], name: String, surname: String, password: String, credits: [Credit]) {
-        self.subscribers = subscribers
-        self.name = name
-        self.surname = surname
-        self.password = password
-        self.credits = credits
     }
     
     mutating func subscribe(_ subscriber: Subscriber) {
@@ -51,4 +42,27 @@ struct Person {
 
 struct WeakSubscriber {
     weak var value : Subscriber?
+}
+
+extension Person {
+    static let mockUser = Person(
+        name: "Владимир",
+        surname: "Путин",
+        password: "j2i45fosd9",
+        avatar: "Putin",
+        credits: [
+            Credit(
+                name: "Ипотека 2-шка в центре Москвы",
+                percent: 8,
+                fullCost: 25_000_000,
+                initialFee: 10_000_000,
+                term: 30),
+            Credit(
+                name: "Лимузин",
+                percent: 15,
+                fullCost: 50_000_000,
+                initialFee: 20_000_000,
+                term: 10)
+        ]
+    )
 }
