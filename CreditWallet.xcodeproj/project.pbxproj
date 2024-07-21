@@ -14,6 +14,8 @@
 		1A5CBF9D2C4CDC5D0073BA02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CBF9C2C4CDC5D0073BA02 /* Preview Assets.xcassets */; };
 		1A5CBFA72C4CDD840073BA02 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFA62C4CDD840073BA02 /* Person.swift */; };
 		1A5CBFA92C4CDD8F0073BA02 /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFA82C4CDD8F0073BA02 /* Credit.swift */; };
+		1A5CBFAB2C4CDFDC0073BA02 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFAA2C4CDFDC0073BA02 /* UserData.swift */; };
+		1A5CBFAE2C4CE4E60073BA02 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFAD2C4CE4E60073BA02 /* ServiceLocator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		1A5CBF9C2C4CDC5D0073BA02 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A5CBFA62C4CDD840073BA02 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		1A5CBFA82C4CDD8F0073BA02 /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
+		1A5CBFAA2C4CDFDC0073BA02 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		1A5CBFAD2C4CE4E60073BA02 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				1A5CBF932C4CDC5C0073BA02 /* CreditWalletApp.swift */,
+				1A5CBFAC2C4CE4D60073BA02 /* Services */,
 				1A5CBFA52C4CDD5A0073BA02 /* Models */,
 				1A5CBFA42C4CDD1B0073BA02 /* MockData */,
 				1A5CBFA32C4CDCA30073BA02 /* Views */,
@@ -87,6 +92,7 @@
 		1A5CBFA42C4CDD1B0073BA02 /* MockData */ = {
 			isa = PBXGroup;
 			children = (
+				1A5CBFAA2C4CDFDC0073BA02 /* UserData.swift */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -98,6 +104,14 @@
 				1A5CBFA82C4CDD8F0073BA02 /* Credit.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1A5CBFAC2C4CE4D60073BA02 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1A5CBFAD2C4CE4E60073BA02 /* ServiceLocator.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,11 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5CBFAB2C4CDFDC0073BA02 /* UserData.swift in Sources */,
 				1A5CBF962C4CDC5C0073BA02 /* ContentView.swift in Sources */,
 				1A5CBF982C4CDC5C0073BA02 /* Item.swift in Sources */,
 				1A5CBFA72C4CDD840073BA02 /* Person.swift in Sources */,
 				1A5CBF942C4CDC5C0073BA02 /* CreditWalletApp.swift in Sources */,
 				1A5CBFA92C4CDD8F0073BA02 /* Credit.swift in Sources */,
+				1A5CBFAE2C4CE4E60073BA02 /* ServiceLocator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

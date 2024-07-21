@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct Credit {
+    let name: String
+    let percent: Double
+    let fullCost: Int
+    let initialFee: Int
+    let term: Int
+}
