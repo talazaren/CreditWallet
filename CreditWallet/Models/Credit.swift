@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Credit {
+struct Credit: Identifiable {
+    let id = UUID()
     let name: String
     let percent: Double
     let fullCost: Double
@@ -17,7 +18,7 @@ struct Credit {
     var monthlyPayment: Double {
         let numerator = loanAmount * monthlyInterestRate * pow(1 + monthlyInterestRate, totalPayments)
         let denominator: Double = pow(1 + monthlyInterestRate, totalPayments) - 1
-        
+    
         return numerator / denominator
     }
     
