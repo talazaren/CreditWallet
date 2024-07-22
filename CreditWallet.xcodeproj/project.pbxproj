@@ -17,6 +17,9 @@
 		1A5CBFAE2C4CE4E60073BA02 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFAD2C4CE4E60073BA02 /* ServiceLocator.swift */; };
 		1A5CBFB02C4CEF150073BA02 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFAF2C4CEF150073BA02 /* MainView.swift */; };
 		1A5CBFB32C4E4E490073BA02 /* Font +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFB22C4E4E490073BA02 /* Font +.swift */; };
+		1A5CBFB52C4E86A40073BA02 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFB42C4E86A40073BA02 /* Router.swift */; };
+		1A5CBFB72C4E879E0073BA02 /* AddCreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFB62C4E879E0073BA02 /* AddCreditView.swift */; };
+		1A5CBFB92C4E87B00073BA02 /* CalculateCreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFB82C4E87B00073BA02 /* CalculateCreditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		1A5CBFAD2C4CE4E60073BA02 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		1A5CBFAF2C4CEF150073BA02 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1A5CBFB22C4E4E490073BA02 /* Font +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font +.swift"; sourceTree = "<group>"; };
+		1A5CBFB42C4E86A40073BA02 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		1A5CBFB62C4E879E0073BA02 /* AddCreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditView.swift; sourceTree = "<group>"; };
+		1A5CBFB82C4E87B00073BA02 /* CalculateCreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateCreditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,8 @@
 			children = (
 				1A5CBF952C4CDC5C0073BA02 /* ContentView.swift */,
 				1A5CBFAF2C4CEF150073BA02 /* MainView.swift */,
+				1A5CBFB62C4E879E0073BA02 /* AddCreditView.swift */,
+				1A5CBFB82C4E87B00073BA02 /* CalculateCreditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				1A5CBFAD2C4CE4E60073BA02 /* ServiceLocator.swift */,
+				1A5CBFB42C4E86A40073BA02 /* Router.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -190,8 +199,11 @@
 				1A5CBFB02C4CEF150073BA02 /* MainView.swift in Sources */,
 				1A5CBFB32C4E4E490073BA02 /* Font +.swift in Sources */,
 				1A5CBF962C4CDC5C0073BA02 /* ContentView.swift in Sources */,
+				1A5CBFB72C4E879E0073BA02 /* AddCreditView.swift in Sources */,
 				1A5CBF982C4CDC5C0073BA02 /* Item.swift in Sources */,
+				1A5CBFB52C4E86A40073BA02 /* Router.swift in Sources */,
 				1A5CBFA72C4CDD840073BA02 /* Person.swift in Sources */,
+				1A5CBFB92C4E87B00073BA02 /* CalculateCreditView.swift in Sources */,
 				1A5CBF942C4CDC5C0073BA02 /* CreditWalletApp.swift in Sources */,
 				1A5CBFA92C4CDD8F0073BA02 /* Credit.swift in Sources */,
 				1A5CBFAE2C4CE4E60073BA02 /* ServiceLocator.swift in Sources */,
