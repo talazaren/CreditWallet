@@ -25,6 +25,16 @@ struct Person {
         "\(name)\n\(surname)"
     }
     
+    mutating func addCredit(credit: Credit) {
+        credits.append(credit)
+        notify(message: "Кредит добавлен")
+    }
+    
+    mutating func deleteCredit(credit: Credit) {
+        credits.removeAll(where: { $0.name == credit.name })
+        notify(message: "Кредит удален")
+    }
+    
     mutating func subscribe(_ subscriber: Subscriber) {
         print("subscribed")
         subscribers.append(WeakSubscriber(value: subscriber))
@@ -35,8 +45,9 @@ struct Person {
         print("unsubscribed")
     }
         
-    mutating func notify() {
+    mutating func notify(message: String) {
         subscribers.forEach { $0.value?.updatePerson(subject: self) }
+        print(message)
     }
 }
 
@@ -53,16 +64,16 @@ extension Person {
         credits: [
             Credit(
                 name: "2-шка в центре Москвы",
-                percent: 8,
-                fullCost: 25_000_000,
-                initialFee: 10_000_000,
-                term: 30),
+                percent: "8",
+                fullCost: "25000000",
+                initialFee: "10000000",
+                term: "30"),
             Credit(
                 name: "Замок на берегу Сочи",
-                percent: 15,
-                fullCost: 50_000_000,
-                initialFee: 20_000_000,
-                term: 10)
+                percent: "15",
+                fullCost: "50000000",
+                initialFee: "20000000",
+                term: "10")
         ]
     )
 }

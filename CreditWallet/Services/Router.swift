@@ -23,8 +23,7 @@ final class Router: ObservableObject {
             MainView()
                 .navigationBarBackButtonHidden()
         case .addCredit:
-            AddCreditView()
-                .navigationBarBackButtonHidden()
+            CreditView()
         case .calculateCredit:
             CalculateCreditView()
                 .navigationBarBackButtonHidden()

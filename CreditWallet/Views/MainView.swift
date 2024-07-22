@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var router: Router
-    let user: Person = .mockUser
+    @State private var user: Person = .mockUser
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -50,7 +50,7 @@ struct MainView: View {
                                 .frame(width: 50)
                                 .foregroundStyle(Color("AppBlue").opacity(0.8))
                                 .overlay(
-                                    Text("\(credit.percent.rounded(), specifier: "%.0f")%")
+                                    Text(credit.percent)
                                         .font(.subheading2())
                                         .foregroundStyle(Color.white)
                                 )
@@ -88,7 +88,7 @@ struct MainView: View {
                             .font(.heading2())
                     }
                 }
-                .shadow(radius: 10)
+                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 2, y: 2)
                 .padding()
                 
                 Spacer()

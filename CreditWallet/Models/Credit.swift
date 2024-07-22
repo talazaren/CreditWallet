@@ -9,15 +9,15 @@ import Foundation
 
 struct Credit: Identifiable {
     let id = UUID()
-    let name: String
-    let percent: Double
-    let fullCost: Double
-    let initialFee: Double
-    let term: Double
+    var name: String
+    var percent: String
+    var fullCost: String
+    var initialFee: String
+    var term: String
     
     var monthlyPayment: Double {
         let numerator = loanAmount * monthlyInterestRate * pow(1 + monthlyInterestRate, totalPayments)
-        let denominator: Double = pow(1 + monthlyInterestRate, totalPayments) - 1
+        let denominator = pow(1 + monthlyInterestRate, totalPayments) - 1
     
         return numerator / denominator
     }
@@ -31,14 +31,14 @@ struct Credit: Identifiable {
     }
     
     private var loanAmount: Double {
-        fullCost - initialFee
+        (Double(fullCost) ?? 0.0) - (Double(initialFee) ?? 0.0)
     }
     
     private var monthlyInterestRate: Double {
-        (percent / 100) / 12
+        ((Double(percent) ?? 0.0) / 100) / 12
     }
     
     private var totalPayments: Double {
-        term * 12
+        (Double(term) ?? 0.0) * 12
     }
 }
