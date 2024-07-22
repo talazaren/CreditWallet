@@ -35,7 +35,7 @@ struct Credit: Identifiable {
     }
     
     private var monthlyInterestRate: Double {
-        percent / 12
+        (percent / 100) / 12
     }
     
     private var totalPayments: Double {

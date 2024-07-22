@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var router: Router
     let user: Person = .mockUser
     
     var body: some View {
@@ -39,15 +40,15 @@ struct MainView: View {
                                 Text(credit.name)
                                     .font(.subheading2())
                                 
-                                Text("\(credit.monthlyPayment.rounded(), specifier: "%.0f") руб")
-                                    .font(.bodyText1())
+                                Text("\(credit.monthlyPayment.rounded(), specifier: "%.0f") руб/мес")
+                                    .font(.bodyText2())
                                     .foregroundStyle(Color.gray)
                             }
                             Spacer()
                             
                             Circle()
                                 .frame(width: 50)
-                                .foregroundStyle(Color.blue.opacity(0.8))
+                                .foregroundStyle(Color("AppBlue").opacity(0.8))
                                 .overlay(
                                     Text("\(credit.percent.rounded(), specifier: "%.0f")%")
                                         .font(.subheading2())
@@ -63,7 +64,35 @@ struct MainView: View {
             .background(Color("AppGray"))
             .cornerRadius(20)
             .padding(.horizontal, 20)
-            .padding(.bottom, 100)
+            .padding(.bottom, 20)
+            
+            HStack {
+                Spacer()
+                
+                Button(action: {
+                    router.navigateTo(.addCredit)
+                }) {
+                    ZStack {
+                        Circle()
+                            .fill(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color("AppBlue"), Color("AppTurquoise"), Color("AppGreen")]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .frame(width: 70, height: 70)
+                                    
+                        Image(systemName: "plus")
+                            .foregroundStyle(.white)
+                            .font(.heading2())
+                    }
+                }
+                .shadow(radius: 10)
+                .padding()
+                
+                Spacer()
+            }
         }
     }
 }
