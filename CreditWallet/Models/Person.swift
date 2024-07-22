@@ -8,7 +8,8 @@
 import Foundation
 
 protocol Subscriber : AnyObject {
-    func update(subject : Person )
+    func updatePerson(subject : Person )
+    func updateCredit(subject : Credit )
 }
 
 struct Person {
@@ -35,8 +36,7 @@ struct Person {
     }
         
     mutating func notify() {
-        subscribers.forEach { $0.value?.update(subject: self)
-        }
+        subscribers.forEach { $0.value?.updatePerson(subject: self) }
     }
 }
 
