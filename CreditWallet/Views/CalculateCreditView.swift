@@ -27,6 +27,7 @@ struct CalculateCreditView: View {
             
             CustomButtonView(buttonAction: {
                 user.addCredit(credit: credit)
+                router.popToRoot()
             }, buttonText: "Сохранить")
         }
         .padding(.horizontal, 25)

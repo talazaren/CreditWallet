@@ -32,7 +32,12 @@ struct MainView: View {
                 .foregroundStyle(.gray)
                 .padding(.horizontal, 20)
             
-            CustomScrollView()
+            ZStack {
+                Color("AppGray")
+                    .cornerRadius(20)
+                CustomScrollView()
+            }
+            .padding(.horizontal, 20)
             
             CircleButtonView {
                 router.navigateTo(.addCredit)
@@ -45,45 +50,41 @@ struct CustomScrollView: View {
     @EnvironmentObject var user: Person
     
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(user.credits) { credit in
-                    NavigationLink(destination: CalculateCreditView(credit: credit)) {
-                        HStack(alignment: .center) {
-                            VStack(alignment: .leading, spacing: 5) {
-                                Text(credit.name)
-                                    .font(.subheading2())
-                                    .foregroundStyle(Color.black)
+        List {
+            ForEach(user.credits) { credit in
+                NavigationLink(destination: CalculateCreditView(credit: credit)) {
+                    HStack(alignment: .center) {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text(credit.name)
+                                .font(.subheading2())
+                                .foregroundStyle(Color.black)
                                 
-                                Text("\(credit.monthlyPayment.rounded(), specifier: "%.0f") руб/мес")
-                                    .font(.bodyText2())
-                                    .foregroundStyle(Color.gray)
-                            }
-                            Spacer()
-                            
-                            Circle()
-                                .frame(width: 50)
-                                .foregroundStyle(Color("AppBlue").opacity(0.8))
-                                .overlay(
-                                    Text(credit.percent + "%")
-                                        .font(.subheading2())
-                                        .foregroundStyle(Color.white)
-                                )
+                            Text("\(credit.monthlyPayment.rounded(), specifier: "%.0f") руб/мес")
+                                .font(.bodyText2())
+                                .foregroundStyle(Color.gray)
                         }
-                        
+                        Spacer()
+                            
+                        Circle()
+                            .frame(width: 50)
+                            .foregroundStyle(Color.appBlue.opacity(0.8))
+                            .overlay(
+                                Text(credit.percent + "%")
+                                    .font(.subheading2())
+                                    .foregroundStyle(Color.white)
+                            )
                     }
-                    Divider().padding(.horizontal, 0)
                 }
             }
-            .padding(15)
+            .onDelete(perform: removeRows)
+            .listRowBackground(Color.appGray)
         }
-        .background(Color("AppGray"))
-        .cornerRadius(20)
-        .padding(.horizontal, 20)
-        .padding(.bottom, 20)
+        .listStyle(.plain)
+        .padding(.vertical, 20)
+    }
+    
+    private func removeRows(at offsets: IndexSet) {
+        user.credits.remove(atOffsets: offsets)
     }
 }
 
-#Preview {
-    MainView()
-}
