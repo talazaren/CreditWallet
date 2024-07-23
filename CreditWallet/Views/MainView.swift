@@ -35,7 +35,7 @@ struct MainView: View {
             ZStack {
                 Color("AppGray")
                     .cornerRadius(20)
-                CustomScrollView()
+                CustomListView()
             }
             .padding(.horizontal, 20)
             
@@ -46,13 +46,14 @@ struct MainView: View {
     }
 }
 
-struct CustomScrollView: View {
+struct CustomListView: View {
+    @EnvironmentObject var router: Router
     @EnvironmentObject var user: Person
     
     var body: some View {
         List {
             ForEach(user.credits) { credit in
-                NavigationLink(destination: CalculateCreditView(credit: credit)) {
+                //NavigationLink(destination: CalculateCreditView(credit: credit)) {
                     HStack(alignment: .center) {
                         VStack(alignment: .leading, spacing: 5) {
                             Text(credit.name)
@@ -74,7 +75,10 @@ struct CustomScrollView: View {
                                     .foregroundStyle(Color.white)
                             )
                     }
-                }
+                    .onTapGesture {
+                        router.navigateTo(.calculateCredit(credit: credit))
+                    }
+                //}
             }
             .onDelete(perform: removeRows)
             .listRowBackground(Color.appGray)

@@ -40,7 +40,9 @@ final class Person: ObservableObject {
     }
     
     func addCredit(credit: Credit) {
-        credits.append(credit)
+        if !credits.contains(credit) {
+            credits.append(credit)
+        }
     }
     
     func deleteCredit(credit: Credit) {
