@@ -53,32 +53,30 @@ struct CustomListView: View {
     var body: some View {
         List {
             ForEach(user.credits) { credit in
-                //NavigationLink(destination: CalculateCreditView(credit: credit)) {
-                    HStack(alignment: .center) {
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text(credit.name)
-                                .font(.subheading2())
-                                .foregroundStyle(Color.black)
+                HStack(alignment: .center) {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(credit.name)
+                            .font(.subheading2())
+                            .foregroundStyle(Color.black)
                                 
-                            Text("\(credit.monthlyPayment.rounded(), specifier: "%.0f") руб/мес")
-                                .font(.bodyText2())
-                                .foregroundStyle(Color.gray)
-                        }
-                        Spacer()
+                        Text("\(credit.monthlyPayment.rounded(), specifier: "%.0f") руб/мес")
+                            .font(.bodyText2())
+                            .foregroundStyle(Color.gray)
+                    }
+                    Spacer()
                             
-                        Circle()
-                            .frame(width: 50)
-                            .foregroundStyle(Color.appBlue.opacity(0.8))
-                            .overlay(
-                                Text(credit.percent + "%")
-                                    .font(.subheading2())
-                                    .foregroundStyle(Color.white)
-                            )
-                    }
-                    .onTapGesture {
-                        router.navigateTo(.calculateCredit(credit: credit))
-                    }
-                //}
+                    Circle()
+                        .frame(width: 50)
+                        .foregroundStyle(Color.appBlue.opacity(0.8))
+                        .overlay(
+                            Text(credit.percent + "%")
+                                .font(.subheading2())
+                                .foregroundStyle(Color.white)
+                        )
+                }
+                .onTapGesture {
+                    router.navigateTo(.calculateCredit(credit: credit))
+                }
             }
             .onDelete(perform: removeRows)
             .listRowBackground(Color.appGray)
