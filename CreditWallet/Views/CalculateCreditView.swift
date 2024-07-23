@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CalculateCreditView: View {
     @EnvironmentObject var router: Router
+    @EnvironmentObject var user: Person
     
     let credit: Credit
     
@@ -25,7 +26,7 @@ struct CalculateCreditView: View {
             Spacer()
             
             CustomButtonView(buttonAction: {
-                
+                user.addCredit(credit: credit)
             }, buttonText: "Сохранить")
         }
         .padding(.horizontal, 25)

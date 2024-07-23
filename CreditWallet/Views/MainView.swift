@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var router: Router
-    @State private var user: Person = .mockUser
+    @EnvironmentObject var user: Person
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -32,7 +32,7 @@ struct MainView: View {
                 .foregroundStyle(.gray)
                 .padding(.horizontal, 20)
             
-            CustomScrollView(user: $user)
+            CustomScrollView()
             
             CircleButtonView {
                 router.navigateTo(.addCredit)
@@ -42,7 +42,7 @@ struct MainView: View {
 }
 
 struct CustomScrollView: View {
-    @Binding var user: Person
+    @EnvironmentObject var user: Person
     
     var body: some View {
         ScrollView {

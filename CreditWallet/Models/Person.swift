@@ -7,23 +7,23 @@
 
 import Foundation
 
-struct Person {
+final class Person: ObservableObject {
     let name: String
     let surname: String
     let password: String
     let avatar: String
-    var credits: [Credit]
+    @Published var credits: [Credit]
     
     var fullName: String {
         "\(name)\n\(surname)"
     }
     
-    static var mockUser = Person(
-        name: "Владимир",
-        surname: "Путин",
-        password: "j2i45fosd9",
-        avatar: "Avatar",
-        credits: [
+    init() {
+        self.name = "Владимир"
+        self.surname = "Путин"
+        self.password = "j2i45fosd9"
+        self.avatar = "Avatar"
+        self.credits = [
             Credit(
                 name: "2-шка в центре Москвы",
                 percent: "8",
@@ -37,13 +37,13 @@ struct Person {
                 initialFee: "20000000",
                 term: "10")
         ]
-    )
+    }
     
-    mutating func addCredit(credit: Credit) {
+    func addCredit(credit: Credit) {
         credits.append(credit)
     }
     
-    mutating func deleteCredit(credit: Credit) {
+    func deleteCredit(credit: Credit) {
         credits.removeAll(where: { $0.name == credit.name })
     }
 }
