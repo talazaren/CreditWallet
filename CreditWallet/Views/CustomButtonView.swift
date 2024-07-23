@@ -35,6 +35,38 @@ struct CustomButtonView: View {
     }
 }
 
+struct CircleButtonView: View {
+    let buttonAction: () -> Void
+    
+    var body: some View {
+        HStack {
+            Spacer()
+            
+            Button(action: buttonAction) {
+                ZStack {
+                    Circle()
+                        .fill(
+                            LinearGradient(
+                                gradient: Gradient(colors: [Color("AppBlue"), Color("AppTurquoise"), Color("AppGreen")]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .frame(width: 70, height: 70)
+                                
+                    Image(systemName: "plus")
+                        .foregroundStyle(.white)
+                        .font(.heading2())
+                }
+            }
+            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 2, y: 2)
+            .padding()
+            
+            Spacer()
+        }
+    }
+}
+
 #Preview {
     CustomButtonView(buttonAction: {}, buttonText: "Рассчитать")
 }

@@ -7,14 +7,7 @@
 
 import Foundation
 
-protocol Subscriber : AnyObject {
-    func updatePerson(subject : Person )
-    func updateCredit(subject : Credit )
-}
-
 struct Person {
-    private lazy var subscribers : [WeakSubscriber] = []
-    
     let name: String
     let surname: String
     let password: String
@@ -25,38 +18,7 @@ struct Person {
         "\(name)\n\(surname)"
     }
     
-    mutating func addCredit(credit: Credit) {
-        credits.append(credit)
-        notify(message: "Кредит добавлен")
-    }
-    
-    mutating func deleteCredit(credit: Credit) {
-        credits.removeAll(where: { $0.name == credit.name })
-        notify(message: "Кредит удален")
-    }
-    
-    mutating func subscribe(_ subscriber: Subscriber) {
-        print("subscribed")
-        subscribers.append(WeakSubscriber(value: subscriber))
-    }
-        
-    mutating func unsubscribe(_ subscriber: Subscriber) {
-        subscribers.removeAll(where: { $0.value === subscriber })
-        print("unsubscribed")
-    }
-        
-    mutating func notify(message: String) {
-        subscribers.forEach { $0.value?.updatePerson(subject: self) }
-        print(message)
-    }
-}
-
-struct WeakSubscriber {
-    weak var value : Subscriber?
-}
-
-extension Person {
-    static let mockUser = Person(
+    static var mockUser = Person(
         name: "Владимир",
         surname: "Путин",
         password: "j2i45fosd9",
@@ -76,4 +38,14 @@ extension Person {
                 term: "10")
         ]
     )
+    
+    mutating func addCredit(credit: Credit) {
+        credits.append(credit)
+    }
+    
+    mutating func deleteCredit(credit: Credit) {
+        credits.removeAll(where: { $0.name == credit.name })
+    }
 }
+
+

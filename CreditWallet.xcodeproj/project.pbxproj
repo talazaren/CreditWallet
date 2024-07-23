@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A5CBF942C4CDC5C0073BA02 /* CreditWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBF932C4CDC5C0073BA02 /* CreditWalletApp.swift */; };
 		1A5CBF962C4CDC5C0073BA02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBF952C4CDC5C0073BA02 /* ContentView.swift */; };
-		1A5CBF982C4CDC5C0073BA02 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBF972C4CDC5C0073BA02 /* Item.swift */; };
 		1A5CBF9A2C4CDC5D0073BA02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CBF992C4CDC5D0073BA02 /* Assets.xcassets */; };
 		1A5CBF9D2C4CDC5D0073BA02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CBF9C2C4CDC5D0073BA02 /* Preview Assets.xcassets */; };
 		1A5CBFA72C4CDD840073BA02 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFA62C4CDD840073BA02 /* Person.swift */; };
@@ -28,7 +27,6 @@
 		1A5CBF902C4CDC5C0073BA02 /* CreditWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5CBF932C4CDC5C0073BA02 /* CreditWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditWalletApp.swift; sourceTree = "<group>"; };
 		1A5CBF952C4CDC5C0073BA02 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		1A5CBF972C4CDC5C0073BA02 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		1A5CBF992C4CDC5D0073BA02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A5CBF9C2C4CDC5D0073BA02 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A5CBFA62C4CDD840073BA02 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -73,12 +71,11 @@
 		1A5CBF922C4CDC5C0073BA02 /* CreditWallet */ = {
 			isa = PBXGroup;
 			children = (
-				1A5CBFB12C4E4E3A0073BA02 /* Extensions */,
 				1A5CBF932C4CDC5C0073BA02 /* CreditWalletApp.swift */,
+				1A5CBFB12C4E4E3A0073BA02 /* Extensions */,
 				1A5CBFAC2C4CE4D60073BA02 /* Services */,
 				1A5CBFA52C4CDD5A0073BA02 /* Models */,
 				1A5CBFA32C4CDCA30073BA02 /* Views */,
-				1A5CBF972C4CDC5C0073BA02 /* Item.swift */,
 				1A5CBF992C4CDC5D0073BA02 /* Assets.xcassets */,
 				1A5CBF9B2C4CDC5D0073BA02 /* Preview Content */,
 			);
@@ -206,7 +203,6 @@
 				1A5CBFB32C4E4E490073BA02 /* Font +.swift in Sources */,
 				1A5CBF962C4CDC5C0073BA02 /* ContentView.swift in Sources */,
 				1A5CBFB72C4E879E0073BA02 /* CreditView.swift in Sources */,
-				1A5CBF982C4CDC5C0073BA02 /* Item.swift in Sources */,
 				1A5CBFB52C4E86A40073BA02 /* Router.swift in Sources */,
 				1A5CBFA72C4CDD840073BA02 /* Person.swift in Sources */,
 				1A5CBFB92C4E87B00073BA02 /* CalculateCreditView.swift in Sources */,
