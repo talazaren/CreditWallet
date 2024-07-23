@@ -10,7 +10,7 @@ import SwiftUI
 enum Route: Hashable {
     case main
     case addCredit
-    case calculateCredit
+    case calculateCredit(credit: Credit)
 }
 
 final class Router: ObservableObject {
@@ -24,9 +24,8 @@ final class Router: ObservableObject {
                 .navigationBarBackButtonHidden()
         case .addCredit:
             CreditView()
-        case .calculateCredit:
-            CalculateCreditView()
-                .navigationBarBackButtonHidden()
+        case .calculateCredit(let credit):
+            CalculateCreditView(credit: credit)
         }
     }
     

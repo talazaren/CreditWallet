@@ -60,7 +60,7 @@ extension Person {
         name: "Владимир",
         surname: "Путин",
         password: "j2i45fosd9",
-        avatar: "Putin",
+        avatar: "Avatar",
         credits: [
             Credit(
                 name: "2-шка в центре Москвы",

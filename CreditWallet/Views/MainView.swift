@@ -17,7 +17,7 @@ struct MainView: View {
                 Text(user.fullName)
                     .font(.heading2())
                 Spacer()
-                Image("Avatar")
+                Image(user.avatar)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 80, height: 80)

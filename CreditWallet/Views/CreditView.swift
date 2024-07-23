@@ -22,39 +22,50 @@ struct CreditView: View {
         VStack(alignment: .leading) {
             Text("Калькулятор ипотеки")
                 .font(.heading2())
-                .padding(.vertical, 20)
+                .padding(.vertical, 15)
             
-            LabeledTextField(title: "НАЗВАНИЕ ИПОТЕКИ", placeholder: "Квартира в ЖК Мечта", text: $credit.name)
-            LabeledTextField(title: "СТОИМОСТЬ НЕДВИЖИМОСТИ", placeholder: "1 000 000", text: $credit.fullCost)
-            LabeledTextField(title: "ПЕРВОНАЧАЛЬНЫЙ ВЗНОС", placeholder: "500 000", text: $credit.initialFee)
-            LabeledTextField(title: "ПРОЦЕНТНАЯ СТАВКА", placeholder: "5%", text: $credit.percent)
-            LabeledTextField(title: "СРОК", placeholder: "10 лет", text: $credit.term)
+            LabeledTextField(
+                title: "НАЗВАНИЕ ИПОТЕКИ",
+                placeholder: "Квартира в ЖК Мечта",
+                text: $credit.name
+            )
+            LabeledTextField(
+                title: "СТОИМОСТЬ НЕДВИЖИМОСТИ",
+                placeholder: "1 000 000",
+                text: $credit.fullCost
+            )
+            .keyboardType(.numberPad)
+            
+            LabeledTextField(
+                title: "ПЕРВОНАЧАЛЬНЫЙ ВЗНОС",
+                placeholder: "500 000",
+                text: $credit.initialFee
+            )
+            .keyboardType(.numberPad)
+            
+            LabeledTextField(
+                title: "ПРОЦЕНТНАЯ СТАВКА",
+                placeholder: "5%",
+                text: $credit.percent
+            )
+            .keyboardType(.numberPad)
+            
+            LabeledTextField(
+                title: "СРОК",
+                placeholder: "10 лет",
+                text: $credit.term
+            )
+            .keyboardType(.numberPad)
             
             Spacer()
             
-            Button(action: {
-                router.navigateTo(.calculateCredit)
-            }) {
-                HStack {
-                    Spacer()
-                    
-                    Text("Рассчитать")
-                        .font(.subheading2())
-                        .frame(height: 52)
-                        .foregroundStyle(Color.white)
-                        
-                    Spacer()
-                }
-            }
-            .background(LinearGradient(
-                gradient: Gradient(colors: [Color("AppBlue"), Color("AppTurquoise"), Color("AppGreen")]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            ))
-            .clipShape(RoundedRectangle(cornerRadius: 30))
-            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 2, y: 2)
-            .padding(.bottom, 20)
+            CustomButtonView(buttonAction: {
+                router.navigateTo(.calculateCredit(credit: credit))
+            }, buttonText: "Рассчитать")
             
+        }
+        .onTapGesture {
+            hideKeyboard()
         }
         .padding(.horizontal, 25)
     }

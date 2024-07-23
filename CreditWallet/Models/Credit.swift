@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Credit: Identifiable {
+struct Credit: Identifiable, Hashable {
     let id = UUID()
     var name: String
     var percent: String
