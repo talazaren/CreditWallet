@@ -46,47 +46,5 @@ struct MainView: View {
     }
 }
 
-struct CustomListView: View {
-    @EnvironmentObject var router: Router
-    @EnvironmentObject var user: Person
-    
-    var body: some View {
-        List {
-            ForEach(user.credits) { credit in
-                HStack(alignment: .center) {
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text(credit.name)
-                            .font(.subheading2())
-                            .foregroundStyle(Color.black)
-                                
-                        Text("\(credit.monthlyPayment.rounded(), specifier: "%.0f") руб/мес")
-                            .font(.bodyText2())
-                            .foregroundStyle(Color.gray)
-                    }
-                    Spacer()
-                            
-                    Circle()
-                        .frame(width: 50)
-                        .foregroundStyle(Color.appBlue.opacity(0.8))
-                        .overlay(
-                            Text(credit.percent + "%")
-                                .font(.subheading2())
-                                .foregroundStyle(Color.white)
-                        )
-                }
-                .onTapGesture {
-                    router.navigateTo(.calculateCredit(credit: credit))
-                }
-            }
-            .onDelete(perform: removeRows)
-            .listRowBackground(Color.appGray)
-        }
-        .listStyle(.plain)
-        .padding(.vertical, 20)
-    }
-    
-    private func removeRows(at offsets: IndexSet) {
-        user.credits.remove(atOffsets: offsets)
-    }
-}
+
 

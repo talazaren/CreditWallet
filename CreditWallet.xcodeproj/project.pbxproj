@@ -13,7 +13,6 @@
 		1A5CBF9D2C4CDC5D0073BA02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CBF9C2C4CDC5D0073BA02 /* Preview Assets.xcassets */; };
 		1A5CBFA72C4CDD840073BA02 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFA62C4CDD840073BA02 /* Person.swift */; };
 		1A5CBFA92C4CDD8F0073BA02 /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFA82C4CDD8F0073BA02 /* Credit.swift */; };
-		1A5CBFAE2C4CE4E60073BA02 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFAD2C4CE4E60073BA02 /* ServiceLocator.swift */; };
 		1A5CBFB02C4CEF150073BA02 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFAF2C4CEF150073BA02 /* MainView.swift */; };
 		1A5CBFB32C4E4E490073BA02 /* Font +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFB22C4E4E490073BA02 /* Font +.swift */; };
 		1A5CBFB52C4E86A40073BA02 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFB42C4E86A40073BA02 /* Router.swift */; };
@@ -21,6 +20,8 @@
 		1A5CBFB92C4E87B00073BA02 /* CalculateCreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFB82C4E87B00073BA02 /* CalculateCreditView.swift */; };
 		1A5CBFBC2C4F92660073BA02 /* View +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFBB2C4F92660073BA02 /* View +.swift */; };
 		1A5CBFBE2C4F942D0073BA02 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFBD2C4F942D0073BA02 /* CustomButtonView.swift */; };
+		1A5CBFC02C50F81B0073BA02 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFBF2C50F81B0073BA02 /* MockData.swift */; };
+		1A5CBFC22C50FD160073BA02 /* CustomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBFC12C50FD160073BA02 /* CustomListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +32,6 @@
 		1A5CBF9C2C4CDC5D0073BA02 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A5CBFA62C4CDD840073BA02 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		1A5CBFA82C4CDD8F0073BA02 /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
-		1A5CBFAD2C4CE4E60073BA02 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		1A5CBFAF2C4CEF150073BA02 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1A5CBFB22C4E4E490073BA02 /* Font +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font +.swift"; sourceTree = "<group>"; };
 		1A5CBFB42C4E86A40073BA02 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -39,6 +39,8 @@
 		1A5CBFB82C4E87B00073BA02 /* CalculateCreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateCreditView.swift; sourceTree = "<group>"; };
 		1A5CBFBB2C4F92660073BA02 /* View +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View +.swift"; sourceTree = "<group>"; };
 		1A5CBFBD2C4F942D0073BA02 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		1A5CBFBF2C50F81B0073BA02 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		1A5CBFC12C50FD160073BA02 /* CustomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +99,7 @@
 				1A5CBFAF2C4CEF150073BA02 /* MainView.swift */,
 				1A5CBFB62C4E879E0073BA02 /* CreditView.swift */,
 				1A5CBFB82C4E87B00073BA02 /* CalculateCreditView.swift */,
-				1A5CBFBD2C4F942D0073BA02 /* CustomButtonView.swift */,
+				1A5CBFC32C50FF5C0073BA02 /* CustomViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -107,6 +109,7 @@
 			children = (
 				1A5CBFA62C4CDD840073BA02 /* Person.swift */,
 				1A5CBFA82C4CDD8F0073BA02 /* Credit.swift */,
+				1A5CBFBF2C50F81B0073BA02 /* MockData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,7 +117,6 @@
 		1A5CBFAC2C4CE4D60073BA02 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1A5CBFAD2C4CE4E60073BA02 /* ServiceLocator.swift */,
 				1A5CBFB42C4E86A40073BA02 /* Router.swift */,
 			);
 			path = Services;
@@ -127,6 +129,15 @@
 				1A5CBFBB2C4F92660073BA02 /* View +.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1A5CBFC32C50FF5C0073BA02 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				1A5CBFBD2C4F942D0073BA02 /* CustomButtonView.swift */,
+				1A5CBFC12C50FD160073BA02 /* CustomListView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,8 @@
 				1A5CBFB02C4CEF150073BA02 /* MainView.swift in Sources */,
 				1A5CBFB32C4E4E490073BA02 /* Font +.swift in Sources */,
 				1A5CBF962C4CDC5C0073BA02 /* ContentView.swift in Sources */,
+				1A5CBFC02C50F81B0073BA02 /* MockData.swift in Sources */,
+				1A5CBFC22C50FD160073BA02 /* CustomListView.swift in Sources */,
 				1A5CBFB72C4E879E0073BA02 /* CreditView.swift in Sources */,
 				1A5CBFB52C4E86A40073BA02 /* Router.swift in Sources */,
 				1A5CBFA72C4CDD840073BA02 /* Person.swift in Sources */,
@@ -210,7 +223,6 @@
 				1A5CBFBC2C4F92660073BA02 /* View +.swift in Sources */,
 				1A5CBFBE2C4F942D0073BA02 /* CustomButtonView.swift in Sources */,
 				1A5CBFA92C4CDD8F0073BA02 /* Credit.swift in Sources */,
-				1A5CBFAE2C4CE4E60073BA02 /* ServiceLocator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

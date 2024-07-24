@@ -12,31 +12,19 @@ final class Person: ObservableObject {
     let surname: String
     let password: String
     let avatar: String
+    
     @Published var credits: [Credit]
     
     var fullName: String {
         "\(name)\n\(surname)"
     }
     
-    init() {
-        self.name = "Владимир"
-        self.surname = "Путин"
-        self.password = "j2i45fosd9"
-        self.avatar = "Avatar"
-        self.credits = [
-            Credit(
-                name: "2-шка в центре Москвы",
-                percent: "8",
-                fullCost: "25000000",
-                initialFee: "10000000",
-                term: "30"),
-            Credit(
-                name: "Замок на берегу Сочи",
-                percent: "15",
-                fullCost: "50000000",
-                initialFee: "20000000",
-                term: "10")
-        ]
+    init(name: String, surname: String, password: String, avatar: String, credits: [Credit]) {
+        self.name = name
+        self.surname = surname
+        self.password = password
+        self.avatar = avatar
+        self.credits = credits
     }
     
     func addCredit(credit: Credit) {
