@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: - Singleton
+
 struct MockData {
     static let shared = MockData()
     

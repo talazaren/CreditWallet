@@ -13,6 +13,8 @@ enum Route: Hashable {
     case calculateCredit(credit: Credit)
 }
 
+//MARK: - Observer. В Swift UI этот паттерн можно сказать вшит в @Observable и ObservableObject
+
 final class Router: ObservableObject {
     @Published var startScreen: Route = .main
     @Published var path = NavigationPath()

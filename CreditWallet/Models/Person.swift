@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: - Observer. В Swift UI этот паттерн можно сказать вшит в @Observable и ObservableObject
+
 final class Person: ObservableObject {
     let name: String
     let surname: String

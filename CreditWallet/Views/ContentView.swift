@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//MARK: - DI. Внедряем зависимости через environment
+
 struct ContentView: View {
     @StateObject private var router = Router()
     @StateObject private var user = Person(
