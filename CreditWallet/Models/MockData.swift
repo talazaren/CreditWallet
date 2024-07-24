@@ -16,7 +16,7 @@ struct MockData {
         name: "Владимир",
         surname: "Путин",
         password: "j2i45fosd9",
-        avatar: "Avatar",
+        avatar: "avatar",
         credits: [
             Credit(
                 name: "2-шка за МКАДом",
