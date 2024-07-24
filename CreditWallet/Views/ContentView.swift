@@ -6,56 +6,32 @@
 //
 
 import SwiftUI
-import SwiftData
+
+//MARK: - DI. Внедряем зависимости через environment
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    @StateObject private var router = Router()
+    @StateObject private var user = Person(
+        name: MockData.shared.mockUser.name,
+        surname: MockData.shared.mockUser.surname,
+        password: MockData.shared.mockUser.password,
+        avatar: MockData.shared.mockUser.avatar,
+        credits: MockData.shared.mockUser.credits
+    )
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
+        NavigationStack(path: $router.path) {
+            router.view(for: router.startScreen)
+                .navigationDestination(for: Route.self) { view in
+                    router.view(for: view)
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
         }
+        .environmentObject(router)
+        .environmentObject(user)
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
+    
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
